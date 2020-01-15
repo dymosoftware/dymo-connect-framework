@@ -19,6 +19,7 @@ Samples
 ### Installing 🔧
 
 Include the file in your project
+
 From GitHub
 ```html
 <script src = "https://github.com/dymosoftware/dymo-connect-framework/blob/master/dymo.connect.framework.js" type="text/javascript"> </script>
