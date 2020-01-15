@@ -32,7 +32,7 @@ From DYMO
 Or download the file and copy into your prject
 
 ### Methods ⚙️
-These are the methods availables in JavaScript SDK
+These are the methods available in JavaScript SDK
 
 - #### dymo.connect.framework
     - **Initialize**
