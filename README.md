@@ -12,16 +12,23 @@ DYMO Connect Software installed
 
 * DYMO Connect framework has compatibility with DYMO Label Software
 
-Reference to Javascript SDK file
+Samples 
 
-* [DYMO.Connect.Framework](http://labelwriter.com/software/dls/sdk/js/dymo.connect.framework.js)
+* [JS samples](https://github.com/dymosoftware/DCD-SDK-Sample/tree/master/JavaScript)
 
 ### Installing 🔧
 
 Include the file in your project
+From GitHub
+```html
+<script src = "https://github.com/dymosoftware/dymo-connect-framework/blob/master/dymo.connect.framework.js" type="text/javascript"> </script>
+```
+From DYMO
 ```html
 <script src = "http://labelwriter.com/software/dls/sdk/js/dymo.connect.framework.js" type="text/javascript"> </script>
 ```
+
+Or download the file and copy into your prject
 
 ### Methods ⚙️
 These are the methods availables in JavaScript SDK
