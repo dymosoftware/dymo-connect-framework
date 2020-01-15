@@ -1,4 +1,4 @@
-# DYMO Connect SDK  
+# DYMO Connect Framework  
 
 ## Getting Started 🚀
 
