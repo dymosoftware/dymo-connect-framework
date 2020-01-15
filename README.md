@@ -18,18 +18,11 @@ Samples
 
 ### Installing 🔧
 
-Include the file in your project
+Include the frmaework into your project
 
-From GitHub
-```html
-<script src = "https://github.com/dymosoftware/dymo-connect-framework/blob/master/dymo.connect.framework.js" type="text/javascript"> </script>
-```
-From DYMO
-```html
-<script src = "http://labelwriter.com/software/dls/sdk/js/dymo.connect.framework.js" type="text/javascript"> </script>
-```
+* [https://github.com/dymosoftware/dymo-connect-framework/blob/master/dymo.connect.framework.js](https://github.com/dymosoftware/dymo-connect-framework/blob/master/dymo.connect.framework.js)
+* [http://labelwriter.com/software/dls/sdk/js/dymo.connect.framework.js](http://labelwriter.com/software/dls/sdk/js/dymo.connect.framework.js)
 
-Or download the file and copy into your prject
 
 ### Methods ⚙️
 These are the methods available in JavaScript SDK
