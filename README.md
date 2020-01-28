@@ -42,9 +42,11 @@ These are the methods available in JavaScript SDK
     ```javascript
     dymo.label.framework.openLabelXml(labelXml) //Load label from XML content
     ```
-     - **Get preview**
+     - **Validate label**
     ```javascript
-    dymo.label.framework.isValidLabel() //Validate if the current label content belongs to a valid DYMO label
+    dymo.label.framework.isValidLabel() //Validate if the current content is a valid label
+    dymo.label.framework.isDCDLabel() //Validate if the current content is a valid DYMO Connect label
+    dymo.label.framework.isDLSLabel() //Validate if the current content is a valid DYMO Label Software label
     ```
      - **Get printers**
     ```javascript
