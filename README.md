@@ -23,7 +23,7 @@ Include the framework into your project
 * [https://github.com/dymosoftware/dymo-connect-framework/blob/master/dymo.connect.framework.js](https://github.com/dymosoftware/dymo-connect-framework/blob/master/dymo.connect.framework.js)
 * [http://labelwriter.com/software/dls/sdk/js/dymo.connect.framework.js](http://labelwriter.com/software/dls/sdk/js/dymo.connect.framework.js)
 
-### Methods ⚙️
+### Functions ⚙️
 These are the methods available in JavaScript SDK
 
 - #### dymo.connect.framework
@@ -60,6 +60,10 @@ These are the methods available in JavaScript SDK
     ```javascript
     dymo.label.framework.renderLabel(labelXml, renderParamsXml, printerName) //Get label preview image of the label
     ```
+#Important:
+
+Opening a label file previously created from DYMO Label Software, with DYMO Connect Software installed, it will convert the structure of DLS label into DYMO Connect label.
+Therefore, **isDCDLabel** function will return always true after label file has been open, when DYMO Connect is installed.
 
 ## Authors ✒️
 
