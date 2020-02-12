@@ -36,15 +36,17 @@ These are the methods available in JavaScript SDK
     ```
     - **Load label**
     ```javascript
-    dymo.label.framework.openLabelFile(fileName) //Load label from file name
+    dymo.label.framework.openLabelFile(fileName) //Load label from file name and return label instance
     ```
     - **Validate label**
     ```javascript
-    dymo.label.framework.openLabelXml(labelXml) //Load label from XML content
+    dymo.label.framework.openLabelXml(labelXml) //Load label from XML content and return label instance
     ```
-     - **Get preview**
+     - **Validate label instance**
     ```javascript
-    dymo.label.framework.isValidLabel() //Validate if the current label content belongs to a valid DYMO label
+    label.isValidLabel() //Validate if the current content is a valid label based on the current service installed
+    label.isDCDLabel() //Validate if the current content is a valid DYMO Connect label based on DYMO Connect service
+    label.isDLSLabel() //Validate if the current content is a valid DYMO Label Software label based on DYMO Label Software service
     ```
      - **Get printers**
     ```javascript
