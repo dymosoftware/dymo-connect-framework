@@ -60,7 +60,7 @@ These are the methods available in JavaScript SDK
     ```javascript
     dymo.label.framework.renderLabel(labelXml, renderParamsXml, printerName) //Get label preview image of the label
     ```
-#Important:
+##Important:
 
 Opening a label file previously created from DYMO Label Software, with DYMO Connect Software installed, it will convert the structure of DLS label into DYMO Connect label.
 Therefore, **isDCDLabel** function will return always true after label file has been open, when DYMO Connect is installed.
