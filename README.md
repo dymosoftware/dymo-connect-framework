@@ -1,8 +1,11 @@
 # DYMO Connect Framework  
 
+DYMO.Connect.Framework is a new JavaScript SDK based on DYMO.Label.Framework introducing compatibility with DYMO Connect Software.
+
+
 ## Getting Started 🚀
 
-These instructions will help you to understand how DYMO Connect framework works for Javascript applications.
+These instructions will help you to understand how DYMO.Connect.Framework works.
 
 ### Prerequisites 📋
 
@@ -10,7 +13,7 @@ DYMO Connect Software installed
 
 * [DYMO Connect Software](https://www.dymo.com/en-US/dymo-connect-for-desktop-v12--windows%C2%AE-dymo-connect-for-desktop-v12#tab=Support)
 
-* DYMO Connect framework has compatibility with DYMO Label Software
+* DYMO.Connect.Framework has compatibility with DYMO Label Software and DYMO Connect Software.
 
 Samples 
 
@@ -24,7 +27,12 @@ Include the framework into your project
 * [http://labelwriter.com/software/dls/sdk/js/dymo.connect.framework.js](http://labelwriter.com/software/dls/sdk/js/dymo.connect.framework.js)
 
 ### Functions ⚙️
-These are the methods available in JavaScript SDK
+
+dymo.connect.framework includes the methods from the previous dymo.label.framework
+
+* [DYMO.Label.Framework documentation](http://labelwriter.com/software/dls/sdk/docs/DYMOLabelFrameworkJavaScriptHelp/)
+
+These are the main methods to get start
 
 - #### dymo.connect.framework
     - **Initialize**
@@ -42,7 +50,7 @@ These are the methods available in JavaScript SDK
     ```javascript
     dymo.label.framework.openLabelXml(labelXml) //Load label from XML content and return label instance
     ```
-     - **Validate label instance**
+     - **Validate label instance** (introduced in dymo.connect.framework)
     ```javascript
     label.isValidLabel() //Validate if the current content is a valid label based on the current service installed
     label.isDCDLabel() //Validate if the current content is a valid DYMO Connect label based on DYMO Connect service
@@ -63,7 +71,9 @@ These are the methods available in JavaScript SDK
 * Important:
 
 Opening a label file previously created from DYMO Label Software, with DYMO Connect Software installed, it will convert the structure of DLS label into DYMO Connect label.
-Therefore, **isDCDLabel** function will return always true after label file has been open, when DYMO Connect is installed.
+Therefore, **isDCDLabel** function will return always true after label file has been open, when DYMO Connect is running.
+
+
 
 ## Authors ✒️
 
@@ -74,3 +84,4 @@ DYMO Team
 
 * [NETStandard documentation](https://docs.microsoft.com/en-us/dotnet/standard/net-standard)
 * Questions? [dymoconsumercare@newellco.com](mailto:dymoconsumercare@newellco.com)
+*  [Developer's blog](https://developers.dymo.com/)
