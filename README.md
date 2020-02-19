@@ -28,11 +28,11 @@ Include the framework into your project
 
 ### Functions ⚙️
 
-dymo.connect.framework includes the methods from the previous dymo.label.framework
+dymo.connect.framework includes functions from the previous dymo.label.framework
 
 * [DYMO.Label.Framework documentation](http://labelwriter.com/software/dls/sdk/docs/DYMOLabelFrameworkJavaScriptHelp/)
 
-These are the main methods to get start
+These are the main functions to get start
 
 - #### dymo.connect.framework
     - **Initialize**
