@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2018 SANFORD L.P. 
+Copyright (c) 2020 SANFORD L.P. 
 
 All rights reserved.
 
