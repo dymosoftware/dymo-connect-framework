@@ -73,6 +73,7 @@ These are the main functions to get start
 Opening a label file previously created from DYMO Label Software, with DYMO Connect Software installed, it will convert the structure of DLS label into DYMO Connect label.
 Therefore, **isDCDLabel** function will return always true after label file has been open, when DYMO Connect is running.
 
+**setTextMarkup** function is not supported for DYMO Connect labels. 
 
 
 ## Authors ✒️
