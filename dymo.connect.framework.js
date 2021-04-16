@@ -10573,6 +10573,21 @@ dymo.label.framework.Label.prototype._setAddressObjectText = function (e, o) {
     return this
 }
 ,
+dymo.label.framework.Label.prototype._setQRCodeObjectText = function(e, o) {
+    if (this.isDCDLabel()) {
+        var t = dymo.xml.getElement(e, "Data")
+            , r = dymo.xml.getElement(t, "DataString");
+        
+        dymo.xml.setElementText(r, o);
+        
+        var t = dymo.xml.getElement(e, "TextDataHolder")
+            , r = dymo.xml.getElement(t, "Value");
+        
+        dymo.xml.setElementText(r, o);
+    }
+    return this
+}
+,
 dymo.label.framework.Label.prototype._setBarcodeObjectText = function (e, o) {
     var t = this.isDCDLabel() ? "Data" : "Text"
         , r = dymo.xml.getElement(e, t);
@@ -10620,6 +10635,9 @@ dymo.label.framework.Label.prototype.setObjectText = function (e, o) {
         case "AddressObject":
         case "TextObject":
             this._setAddressObjectText(t, o);
+            break;
+        case "QRCodeObject":
+            this._setQRCodeObjectText(t, o);
             break;
         case "BarcodeObject":
             this._setBarcodeObjectText(t, o);
