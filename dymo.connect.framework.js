@@ -10128,7 +10128,11 @@ dymo.xml.parse = function (e) {
 }
 ,
 dymo.xml.serialize = function (e) {
-    return goog.dom.xml.serialize(e)
+    function fix (e) {
+        return e.replaceAll(/<Color (.+)\/>/g, "<Color $1> </Color>");
+	}	
+
+    return fix(goog.dom.xml.serialize(e))
 }
 ,
 dymo.xml.appendElement = function (e, o, t, r) {
