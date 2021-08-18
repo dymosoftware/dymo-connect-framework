@@ -10130,7 +10130,7 @@ dymo.xml.parse = function (e) {
 dymo.xml.serialize = function (e) {
     function fix (e) {
         return e.replaceAll(/<Color (.+)\/>/g, "<Color $1> </Color>");
-	}	
+    }	
 
     return fix(goog.dom.xml.serialize(e))
 }
