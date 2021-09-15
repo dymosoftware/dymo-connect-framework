@@ -10433,8 +10433,8 @@ dymo.label.framework.Label.prototype._getAddressObjectText = function (e) {
     if (this.isDCDLabel())
         for (var t = dymo.xml.getElement(e, "FormattedText"), r = dymo.xml.getElements(t, "LineTextSpan"), g = 0; g < r.length; g++) {
             var n = dymo.xml.getElements(r[g], "TextSpan");
-            for (g = 0; g < n.length; g++) {
-                var i = dymo.xml.getElement(n[g], "Text");
+            for (gz = 0; gz < n.length; gz++) {
+                var i = dymo.xml.getElement(n[gz], "Text");
                 o += dymo.xml.getElementText(i)
             }
         }
