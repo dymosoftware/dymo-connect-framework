@@ -10,8 +10,11 @@ These instructions will help you to understand how DYMO.Connect.Framework works.
 ### Prerequisites 📋
 
 DYMO Connect Software installed
+* [DYMO Connect Software (click on 'The latest software and drivers...')](https://www.dymo.com/support?cfid=user-guide)
 
-* [DYMO Connect Software](https://www.dymo.com/en-US/dymo-connect-for-desktop-v12--windows%C2%AE-dymo-connect-for-desktop-v12#tab=Support)
+* [DYMO Connect Software 1.4.3.103 (direct link - mac)](https://s3.amazonaws.com/download.dymo.com/dymo/Software/Mac/DCDMac1.4.3.103.pkg)
+
+* [DYMO Connect Software 1.4.3.131 (direct link - windows)](https://s3.amazonaws.com/download.dymo.com/dymo/Software/Win/DCDSetup1.4.3.131.exe)
 
 * DYMO.Connect.Framework has compatibility with DYMO Label Software and DYMO Connect Software.
 
