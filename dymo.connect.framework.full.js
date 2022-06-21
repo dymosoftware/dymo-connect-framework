@@ -33202,6 +33202,7 @@ function DlsWebService()
 	{ return invokeWsCommandAsync("GET", WS_CMD_GET_CONSUMABLE_INFO_IN_550_PRINTER, { "printerName": printerName }); };
 }
 
+
 //----------------------------------------------------------------------------
 //
 //  $Id: DYMO.Label.Framework.js 12271 2010-06-16 14:25:34Z vbuzuev $ 
@@ -35088,49 +35089,34 @@ dymo.label.framework.Label.prototype._setAddressObjectText = function(objectElem
         // clear all text
         dymo.xml.removeAllChildren(styledTextElem);
 
-        var lines = text.split('\n');
-        for (var i = 0; i < lines.length; i++)
-        {
-            var line = lines[i].replace('\r', '');
-            if (i < lines.length - 1)
-                line = line + '\n';
+		// use font from lineFonts or the last font. 
+		// If there is no lineFonts, try to use font from current styled text
+		var font = defaultFont;
+		if (lineFonts.length > 0)
+		{
+			font = lineFonts[lineFonts.length - 1];
+		}
+		else if (attributes.length > 0)
+		{
+			font = dymo.xml.getElement(attributes[attributes.length - 1], "Font");
+		}
 
-            // use font from lineFonts or the last font. 
-            // If there is no lineFonts, try to use font from current styled text
-            var font = defaultFont;
-            if (lineFonts.length > 0)
-            {
-                if (i < lineFonts.length)
-                    font = lineFonts[i];
-                else
-                    font = lineFonts[lineFonts.length - 1];
-            }
-            else if (attributes.length > 0)
-            {
-                if (i < attributes.length)
-                    font = dymo.xml.getElement(attributes[i], "Font");
-                else
-                    font = dymo.xml.getElement(attributes[attributes.length - 1], "Font");
-            }
-
-            // font color
-            var fontColor = defaultColor;
-            //alert(Xml.serialize(fontColor));
-            if (i < attributes.length)
-                fontColor = dymo.xml.getElement(attributes[i], "ForeColor");
-            //alert(Xml.serialize(fontColor));
-            // create styledText element for the line
-            var elemElem = styledTextElem.ownerDocument.createElement("Element");
-            var stringElem = styledTextElem.ownerDocument.createElement("String");
-            dymo.xml.setElementText(stringElem, line);
-            var attributesElem = styledTextElem.ownerDocument.createElement("Attributes");
-            attributesElem.appendChild(font.cloneNode(true));
-            attributesElem.appendChild(fontColor.cloneNode(true));
-            elemElem.appendChild(stringElem);
-            elemElem.appendChild(attributesElem);
-            styledTextElem.appendChild(elemElem);
-        }
-            //alert(Xml.serialize(styledTextElem));
+		// font color
+		var fontColor = defaultColor;
+		//alert(Xml.serialize(fontColor));
+		fontColor = dymo.xml.getElement(attributes[0], "ForeColor");
+		//alert(Xml.serialize(fontColor));
+		// create styledText element for the text
+		var elemElem = styledTextElem.ownerDocument.createElement("Element");
+		var stringElem = styledTextElem.ownerDocument.createElement("String");
+		dymo.xml.setElementText(stringElem, text);
+		var attributesElem = styledTextElem.ownerDocument.createElement("Attributes");
+		attributesElem.appendChild(font.cloneNode(true));
+		attributesElem.appendChild(fontColor.cloneNode(true));
+		elemElem.appendChild(stringElem);
+		elemElem.appendChild(attributesElem);
+		styledTextElem.appendChild(elemElem);
+		
     }
     else
     {
