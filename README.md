@@ -11,7 +11,7 @@ These instructions will help you to understand how DYMO.Connect.Framework works.
 
 DYMO Connect Software installed
 
-* [DYMO Connect Software](https://www.dymo.com/en-US/dymo-connect-for-desktop-v12--windows%C2%AE-dymo-connect-for-desktop-v12#tab=Support)
+* [DYMO Connect Software](https://www.dymo.com/support?cfid=online-support)
 
 * DYMO.Connect.Framework has compatibility with DYMO Label Software and DYMO Connect Software.
 
