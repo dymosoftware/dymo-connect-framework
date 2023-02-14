@@ -40181,14 +40181,6 @@ dymo.label.framework.removeAllPrinterUri = function()
     //        _networkPrinters.remove(i);
 }
 
-var resultProps = function() {
-    this.options = {
-        enumerable: false,
-        value: []
-    };
-  }
-  
-
 /**
     Create printer collection
     @private
@@ -40198,16 +40190,12 @@ function createPrintersCollection() {
     var result = [];
     result['byIndex'] = [];
 
-    var resProps = new resultProps();
-    result['byIndex'] = resProps.options();
-
-    /*Object.defineProperty(result, 'byIndex', {
+    Object.defineProperty(result, 'byIndex', {
         enumerable: false,
         value: []
-    });*/
+    });
     return result;
 }
-
 
 /**
     add to printer collection
