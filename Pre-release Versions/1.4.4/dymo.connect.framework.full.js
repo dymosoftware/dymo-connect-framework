@@ -32917,7 +32917,7 @@ function ajaxSync(url, data, method)
 	}
 	
 	x.send(sendData);
-	
+
 	if (x.status != 200) {
 	    str = x.responseText;
 	    sti = str.split(':', 1)[0];
@@ -33160,7 +33160,7 @@ function DlsWebService()
 	{ return invokeWsCommand("GET", WS_CMD_OPEN_LABEL, { "fileName": fileName }); };
 
 	this.saveLabelFile = function(labelXml, directory, fileName)
-	{ return invokeWsCommand("POST", WS_CMD_SAVE_LABEL, { "labelXml": labelXml, "filePath": directory, "fileName": fileName, } ); };
+	{ return invokeWsCommand("POST", WS_CMD_SAVE_LABEL, { "labelXml": labelXml, "filePath": directory, "fileName": fileName } ); };
 
 	this.printLabel = function(printerName, printParamsXml, labelXml, labelSetXml)
 	{ return invokeWsCommand("POST", WS_CMD_PRINT_LABEL, { "printerName": printerName, "printParamsXml": printParamsXml, "labelXml": labelXml, "labelSetXml": labelSetXml } ); };
@@ -33188,7 +33188,7 @@ function DlsWebService()
 	{ return invokeWsCommandAsync("GET", WS_CMD_OPEN_LABEL, { "fileName": fileName }); };
 
 	this.saveLabelFileAsync = function(labelXml, directory, fileName)
-	{ return invokeWsCommandAsync("POST", WS_CMD_SAVE_LABEL, { "labelXml": labelXml, "filePath": directory, "fileName": fileName, } ); };
+	{ return invokeWsCommandAsync("POST", WS_CMD_SAVE_LABEL, { "labelXml": labelXml, "filePath": directory, "fileName": fileName } ); };
 
 	this.printLabelAsync = function(printerName, printParamsXml, labelXml, labelSetXml)
 	{ return invokeWsCommandAsync("POST", WS_CMD_PRINT_LABEL, { "printerName": printerName, "printParamsXml": printParamsXml, "labelXml": labelXml, "labelSetXml": labelSetXml }); };
@@ -33625,7 +33625,7 @@ dymo.xml.parse = function(text)
 dymo.xml.serialize = function(node)
 {
     function fix (node) {
-        return node.replaceAll(/<Color (.+)\/>/g, "<Color $1> </Color>");
+        return node.replace(/<Color (.+)\/>/g, "<Color $1> </Color>");
 	}	
 
     return fix(goog.dom.xml.serialize(node));
@@ -34531,7 +34531,11 @@ goog.exportProperty(dymo.label.framework.Label.prototype, "getLabelXml", dymo.la
 */
 dymo.label.framework.Label.prototype.render = function(renderParamsXml, printerName)
 {
-    return dymo.label.framework.renderLabel(this.getLabelXml(), renderParamsXml, printerName);
+    var base64render = dymo.label.framework.renderLabel(this.getLabelXml(), renderParamsXml, printerName);
+    if(base64render){
+        base64render = base64render.replace(/['"]+/g, '');
+    }
+    return base64render;
 }
 goog.exportProperty(dymo.label.framework.Label.prototype, "render", dymo.label.framework.Label.prototype.render);
 
@@ -34540,7 +34544,11 @@ goog.exportProperty(dymo.label.framework.Label.prototype, "render", dymo.label.f
 */
 dymo.label.framework.Label.prototype.renderAsync = function(renderParamsXml, printerName)
 {
-    return dymo.label.framework.renderLabelAsync(this.getLabelXml(), renderParamsXml, printerName);
+    var base64render = dymo.label.framework.renderLabelAsync(this.getLabelXml(), renderParamsXml, printerName);
+    if(base64render){
+        base64render = base64render.replace(/['"]+/g, '');
+    }
+    return base64render;
 }
 goog.exportProperty(dymo.label.framework.Label.prototype, "renderAsync", dymo.label.framework.Label.prototype.renderAsync);
 
@@ -40189,11 +40197,12 @@ dymo.label.framework.removeAllPrinterUri = function()
 function createPrintersCollection() {
     var result = [];
     result['byIndex'] = [];
-
-    Object.defineProperty(result, 'byIndex', {
+    // Following lines commented on purpose since are not really needed but IE7 gives an error since Object is not supported
+    /*Object.defineProperty(result, 'byIndex', {
         enumerable: false,
         value: []
-    });
+    });*/
+
     return result;
 }
 
