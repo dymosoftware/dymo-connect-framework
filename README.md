@@ -30,7 +30,7 @@ Include the framework into your project
 
 dymo.connect.framework includes functions from the previous dymo.label.framework
 
-* [DYMO.Label.Framework documentation](http://labelwriter.com/software/dls/sdk/docs/DYMOLabelFrameworkJavaScriptHelp/)
+* [Download DYMO.Label.Framework documentation](https://github.com/dymosoftware/dymo-connect-framework/tree/master/doc/JavaScript/)
 
 These are the main functions to get start
 
