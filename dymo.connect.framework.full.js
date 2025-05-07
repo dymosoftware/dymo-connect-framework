@@ -35155,6 +35155,14 @@ dymo.label.framework.Label.prototype._setQRCodeObjectText = function(objectElem,
             dymo.xml.setElementText(dataStringElem, text);
         }
     }
+
+    f (this.isDCDLabel()) {
+      var dataElem = dymo.xml.getElement(objectElem, "TextDataHolder");
+      if (dataElem) {
+          var dataStringElem = dymo.xml.getElement(dataElem, "Value");
+          dymo.xml.setElementText(dataStringElem, text);
+      }
+  }
     return this;
 }
 
