@@ -11,8 +11,8 @@ These instructions will help you to understand how DYMO.Connect.Framework works.
 
 DYMO Connect Software installed
 
-* [DYMO Connect Software Windows](https://download.dymo.com/dymo/Software/Win/DCDSetup1.4.5.1.exe)
-* [DYMO Connect Software Mac](https://download.dymo.com/dymo/Software/Mac/DCDMac1.4.4.18.pkg)
+* [DYMO Connect Software Windows](https://dymoreleasecontent.blob.core.windows.net/dymo-release/DCDSetup1.5.1.20.exe)
+* [DYMO Connect Software Mac](https://dymoreleasecontent.blob.core.windows.net/dymo-release/DCDMac1.5.1.15.pkg)
 
 * DYMO.Connect.Framework has compatibility with DYMO Label Software and DYMO Connect Software.
 
