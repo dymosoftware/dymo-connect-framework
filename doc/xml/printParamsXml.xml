@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-->
+    printParamsXml - 28.09.2022 - Last known version
+    source: https://web.archive.org/web/20220928183706/http://labelwriter.com/software/dls/sdk/PrintParams.xsd
+<-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="FlowDirection">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LeftToRight"/>
+            <xs:enumeration value="RightToLeft"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Copies">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TwinTurboRoll">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Auto"/>
+            <xs:enumeration value="Left"/>
+            <xs:enumeration value="Right"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="LabelWriterPrintQuality">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Auto"/>
+            <xs:enumeration value="Text"/>
+            <xs:enumeration value="BarcodeAndGraphics"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TapeAlignment">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Center"/>
+            <xs:enumeration value="Left"/>
+            <xs:enumeration value="Right"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--<xs:simpleType name="TapeCasetteColor">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="BlackOnWhite"/>
+            <xs:enumeration value="BlackOnBlue"/>
+            <xs:enumeration value="BlackOnRed"/>
+            <xs:enumeration value="BlackOnSilver"/>
+            <xs:enumeration value="BlackOnYellow"/>
+            <xs:enumeration value="BlackOnGold"/>
+            <xs:enumeration value="BlackOnGreen"/>
+            <xs:enumeration value="BlackOnFluorescentGreen"/>
+            <xs:enumeration value="BlackOnFluorescentRed"/>
+            <xs:enumeration value="WhiteOnClear"/>
+            <xs:enumeration value="WhiteOnBlack"/>
+            <xs:enumeration value="BlueOnWhite"/>
+            <xs:enumeration value="RedOnWhite"/>
+        </xs:restriction>
+    </xs:simpleType>-->
+
+    <xs:simpleType name="TapeCutMode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="AutoCut"/>
+            <xs:enumeration value="ChainMarks"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="PrintParams">
+        <xs:sequence>
+            <xs:element name="Copies" type="Copies" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="JobTitle" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="FlowDirection" type="FlowDirection" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LabelWriterPrintParams">
+        <xs:complexContent>
+            <xs:extension base="PrintParams">
+                <xs:sequence>
+                    <xs:element name="PrintQuality" type="LabelWriterPrintQuality" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="TwinTurboRoll" type="TwinTurboRoll" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="TapePrintParams">
+        <xs:complexContent>
+            <xs:extension base="PrintParams">
+                <xs:sequence>
+                    <xs:element name="Alignment" type="TapeAlignment" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="CutMode" type="TapeCutMode" minOccurs="0" maxOccurs="1"/>
+                    <!--<xs:element name="CasetteColor" type="TapeCasetteColor" minOccurs="0" maxOccurs="1"/>-->
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="LabelWriterPrintParams" type="LabelWriterPrintParams"/>
+    <xs:element name="TapePrintParams" type="TapePrintParams"/>
+
+
+</xs:schema>
