@@ -35148,14 +35148,14 @@ dymo.label.framework.Label.prototype._setAddressObjectText = function(objectElem
     @return {dymo.label.framework.Label}
 */
 dymo.label.framework.Label.prototype._setQRCodeObjectText = function(objectElem, text) {
-    if (this.isDCDLabel()) {
-        var dataElem = dymo.xml.getElement(objectElem, "Data");
-        if (dataElem) {
-            var dataStringElem = dymo.xml.getElement(dataElem, "DataString");
-            dymo.xml.setElementText(dataStringElem, text);
-        }
-    }
-    return this;
+  if (this.isDCDLabel()) {
+      let dataElem = dymo.xml.getElement(objectElem, "WebAddressDataHolder");
+      if (dataElem) {
+          let dataStringElem = dymo.xml.getElement(dataElem, "DataString");
+          dymo.xml.setElementText(dataStringElem, text);
+      }
+  }
+  return this;
 }
 
 /** sets content for an Barcode object
